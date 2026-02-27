@@ -1,0 +1,132 @@
+/* =====================================================
+   CURRENT WEATHER CARD
+===================================================== */
+
+.current-weather {
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.6s ease both;
+}
+
+/* soft gradient glow */
+.current-weather::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: radial-gradient(
+    300px 120px at 20% 0%,
+    rgba(79, 156, 255, 0.35),
+    transparent 60%
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Hover lift */
+.current-weather:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =====================================================
+   LOCATION ROW
+===================================================== */
+
+.location-row h2 {
+  letter-spacing: 0.4px;
+}
+
+.location-row span {
+  font-size: 0.85rem;
+}
+
+/* =====================================================
+   WEATHER MAIN
+===================================================== */
+
+.weather-main {
+  position: relative;
+}
+
+/* icon */
+.weather-icon {
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.45));
+  transition: transform var(--transition-smooth);
+}
+
+.current-weather:hover .weather-icon {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+/* temperature */
+.temperature {
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    #b6c2ff
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.weather-desc {
+  padding-left: 4px;
+  letter-spacing: 0.4px;
+}
+
+/* =====================================================
+   WEATHER DETAILS GRID
+===================================================== */
+
+.details-grid {
+  animation: fadeUp 0.7s ease both;
+}
+
+/* detail card */
+.detail-card {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* soft highlight */
+.detail-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.12),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.detail-card:hover::before {
+  opacity: 1;
+}
+
+/* hover lift */
+.detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* label */
+.detail-card span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* value */
+.detail-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}

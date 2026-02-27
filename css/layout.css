@@ -1,0 +1,217 @@
+/* =====================================================
+   MAIN DASHBOARD LAYOUT
+===================================================== */
+
+.dashboard {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: fadeUp 0.7s ease both;
+}
+
+/* =====================================================
+   APP TITLE
+===================================================== */
+
+.app-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+/* =====================================================
+   APP BODY STATES
+===================================================== */
+
+.app-body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+}
+
+.app-body.empty-mode .content {
+  display: none;
+}
+
+.app-body.app-mode .content {
+  display: flex;
+}
+
+/* =====================================================
+   SEARCH BAR LAYOUT
+===================================================== */
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.city-input {
+  flex: 1;
+  font-size: 0.95rem;
+}
+
+/* =====================================================
+   MAIN CONTENT GRID
+===================================================== */
+
+.content {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 22px;
+  width: 100%;
+  animation: fadeUp 0.6s ease both;
+}
+
+/* =====================================================
+   LEFT PANEL
+===================================================== */
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* searched location */
+.searched-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  padding-left: 6px;
+}
+
+/* =====================================================
+   CURRENT WEATHER BLOCK
+===================================================== */
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22px;
+}
+
+/* location row */
+.location-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.city-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* main weather */
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.weather-icon {
+  width: 84px;
+  height: 84px;
+}
+
+.temperature {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+.weather-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+}
+
+/* =====================================================
+   WEATHER DETAILS GRID
+===================================================== */
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.detail-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 80px;
+}
+
+/* =====================================================
+   RIGHT PANEL
+===================================================== */
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =====================================================
+   HOURLY & DAILY SECTIONS
+===================================================== */
+
+.hourly,
+.daily {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  min-height: 180px;
+}
+
+.hourly h4,
+.daily h4 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* =====================================================
+   EMPTY PANEL LAYOUT
+===================================================== */
+
+.empty-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  min-height: 380px;
+}
+
+.empty-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.empty-content img {
+  width: 140px;
+  opacity: 0.85;
+}
+

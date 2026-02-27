@@ -1,0 +1,173 @@
+/* =====================================================
+   FORECAST SECTIONS (HOURLY & DAILY)
+===================================================== */
+
+.hourly,
+.daily {
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.7s ease both;
+}
+
+/* subtle top glow */
+.hourly::before,
+.daily::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    400px 140px at 15% 0%,
+    rgba(34, 211, 238, 0.25),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* =====================================================
+   HOURLY FORECAST – HORIZONTAL SCROLL
+===================================================== */
+
+.hourly-list {
+  display: flex;
+  gap: 14px;
+  padding-bottom: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Hour card */
+.hour-card {
+  min-width: 90px;
+  flex-shrink: 0;
+  padding: 14px 10px;
+  border-radius: var(--radius-md);
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+.hour-card span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.hour-card img {
+  width: 34px;
+  height: 34px;
+}
+
+.hour-card strong {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Hover effect */
+.hour-card:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =====================================================
+   DAILY FORECAST – VERTICAL SCROLL (6 DAYS)
+===================================================== */
+
+.daily-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* Day card */
+.day-card {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-glass);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-smooth),
+    box-shadow var(--transition-smooth);
+}
+
+/* Day label */
+.day-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Weather icon */
+.day-card img {
+  width: 34px;
+  height: 34px;
+}
+
+/* Temp range */
+.day-temp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.85rem;
+}
+
+.day-temp span:first-child {
+  font-weight: 600;
+}
+
+.day-temp span:last-child {
+  color: var(--text-muted);
+}
+
+/* Hover */
+.day-card:hover {
+  transform: translateX(6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =====================================================
+   SCROLLBAR STYLING (FORECASTS)
+===================================================== */
+
+/* Hourly horizontal */
+.hourly-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.hourly-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    var(--accent-blue),
+    var(--accent-purple)
+  );
+  border-radius: 10px;
+}
+
+/* Daily vertical */
+.daily-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.daily-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-cyan),
+    var(--accent-purple)
+  );
+  border-radius: 10px;
+}
+

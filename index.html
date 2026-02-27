@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+  />
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/search.css">
+  <link rel="stylesheet" href="css/current.css">
+  <link rel="stylesheet" href="css/forecast.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fixed-layout.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <title>SkyCast</title>
+</head>
+
+<body>
+
+<main class="dashboard glass">
+
+  <h1 class="app-title">☁️ AtmosX</h1>
+
+  <div class="app-body empty-mode">
+
+    <header class="search-bar glass">
+      <input
+        type="text"
+        class="city-input"
+        placeholder="Search city..."
+        autocomplete="off"
+      />
+      <button class="search-btn" aria-label="Search">
+        <span class="material-symbols-outlined">search</span>
+      </button>
+    </header>
+
+    <section class="empty-panel glass">
+      <div class="empty-content">
+        <img src="assets/weather/default.png" alt="Search city" />
+        <h2>Search City</h2>
+        <p>Find out the weather condition of the city</p>
+      </div>
+    </section>
+
+    <div class="content">
+
+      <div class="left-panel">
+
+        <div class="searched-location hidden">
+          <span class="material-symbols-outlined">location_on</span>
+          <span class="searched-city-name"></span>
+        </div>
+
+        <section class="current-weather glass" style="display:none;">
+          <div class="location-row">
+            <h2 class="city-name">City</h2>
+            <span class="date"></span>
+          </div>
+
+          <div class="weather-main">
+            <img
+              class="weather-icon"
+              src="assets/weather/clouds.svg"
+              alt="Weather icon"
+            />
+            <h1 class="temperature">--°</h1>
+          </div>
+
+          <p class="weather-desc"></p>
+        </section>
+
+        <section class="details-grid" style="display:none;">
+          <div class="detail-card glass">
+            <span>Feels Like</span>
+            <h3>--</h3>
+          </div>
+
+          <div class="detail-card glass">
+            <span>Humidity</span>
+            <h3>--</h3>
+          </div>
+
+          <div class="detail-card glass">
+            <span>Wind</span>
+            <h3>--</h3>
+          </div>
+
+          <div class="detail-card glass">
+            <span>Pressure</span>
+            <h3>--</h3>
+          </div>
+        </section>
+
+        <section class="sun-card glass" style="display:none;">
+          <h4>Sunrise & Sunset</h4>
+        
+          <div class="sun-times">
+            <div class="sun-item">
+              <span class="label">Sunrise</span>
+              <strong class="sunrise-time">--:--</strong>
+            </div>
+          
+            <div class="sun-divider"></div>
+          
+            <div class="sun-item">
+              <span class="label">Sunset</span>
+              <strong class="sunset-time">--:--</strong>
+            </div>
+          </div>
+        
+          <div class="sun-progress">
+            <div class="sun-track">
+              <span class="sun-indicator"></span>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div class="right-panel">
+
+        <section class="hourly glass" style="display:none;">
+          <h4>Hourly Forecast</h4>
+          <div class="hourly-list"></div>
+        </section>
+
+        <section class="daily glass" style="display:none;">
+          <h4>6-Day Forecast</h4>
+          <div class="daily-scroll"></div>
+        </section>
+
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>

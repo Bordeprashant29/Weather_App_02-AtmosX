@@ -1,0 +1,195 @@
+/* =====================================================
+   GLOBAL MOBILE RESET
+===================================================== */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .dashboard {
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    border-radius: 0;
+  }
+
+  /* Reduce top spacing */
+  .app-title {
+    margin-bottom: 12px;
+  }
+
+  /* =====================================================
+     SEARCH BAR
+  ===================================================== */
+
+  .search-bar {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto 16px auto;
+  }
+
+  /* =====================================================
+     MAIN CONTENT FLOW
+  ===================================================== */
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    gap: 14px;
+  }
+
+  /* =====================================================
+     CURRENT WEATHER
+  ===================================================== */
+
+  .current-weather {
+    padding: 16px;
+  }
+
+  .weather-main {
+    gap: 12px;
+  }
+
+  .weather-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .temperature {
+    font-size: 2.6rem;
+  }
+
+  /* =====================================================
+     DETAILS GRID (Feels Like, Humidity, etc.)
+  ===================================================== */
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .detail-card {
+    padding: 14px;
+  }
+
+  /* =====================================================
+     SUNRISE / SUNSET CARD
+  ===================================================== */
+
+  .sun-card {
+    padding: 16px;
+  }
+
+  .sun-times {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .sun-divider {
+    display: none;
+  }
+
+  /* =====================================================
+     HOURLY FORECAST
+  ===================================================== */
+
+  .hourly {
+    padding: 16px;
+  }
+
+  .hourly-list {
+    gap: 12px;
+  }
+
+  .hour-card {
+    min-width: 78px;
+    padding: 10px 8px;
+  }
+
+  .hour-card img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* =====================================================
+     DAILY FORECAST
+  ===================================================== */
+
+  .daily {
+    padding: 16px;
+  }
+
+  .daily-scroll {
+    max-height: none;
+    padding-right: 0;
+  }
+
+  .day-card {
+    grid-template-columns: 1fr auto;
+    padding: 12px;
+  }
+
+  .day-temp {
+    font-size: 0.8rem;
+  }
+}
+
+/* =====================================================
+   SMALL DEVICES (VERY NARROW)
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .dashboard {
+    padding: 12px;
+  }
+
+  .app-title {
+    font-size: 1.4rem;
+  }
+
+  .temperature {
+    font-size: 2.2rem;
+  }
+
+  .weather-desc {
+    font-size: 0.85rem;
+  }
+
+  .hour-card {
+    min-width: 72px;
+  }
+
+  .day-card {
+    gap: 8px;
+  }
+}
+
+/* =====================================================
+   TABLETS (BETTER USE OF SPACE)
+===================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .right-panel {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .hourly,
+  .daily {
+    flex: 1;
+  }
+}

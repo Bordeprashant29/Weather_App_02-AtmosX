@@ -1,0 +1,156 @@
+/* =====================================================
+   OUTER CONTAINER WIDTH REFINEMENT
+===================================================== */
+
+/* Control overall content width */
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* LEFT PANEL CONTAINERS */
+.search-bar,
+.current-weather,
+.details-grid {
+  max-width: 520px;
+}
+
+/* RIGHT PANEL CONTAINERS */
+.hourly,
+.daily {
+  max-width: 520px;
+}
+
+/* Ensure alignment stays clean */
+.left-panel,
+.right-panel {
+  align-items: flex-start;
+}
+
+/* Prevent stretch */
+.search-bar,
+.current-weather,
+.details-grid,
+.hourly,
+.daily {
+  width: 100%;
+}
+
+/* =====================================================
+   SEARCH BAR – STATE AWARE POSITIONING
+===================================================== */
+
+/* DEFAULT / NOT FOUND / EMPTY STATE */
+.app-body.empty-mode .search-bar {
+  margin: 0 auto 24px auto;
+  max-width: 420px;
+}
+
+/* WEATHER DATA STATE */
+.app-body.app-mode .search-bar {
+  margin: 0;
+  max-width: 520px;
+}
+
+/* =====================================================
+   EMPTY MODE – PERFECT CENTERING
+===================================================== */
+
+.app-body.empty-mode {
+  min-height: calc(100vh - 120px); /* accounts for title */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+/* Search bar centered in empty state */
+.app-body.empty-mode .search-bar {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Empty panel container */
+.app-body.empty-mode .empty-panel {
+  width: 420px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Actual empty card */
+.app-body.empty-mode .empty-content {
+  max-width: 460px;
+  width: 100%;
+  padding: 44px 28px;
+}
+
+/* Empty illustration */
+.empty-content img {
+  width: 120px;
+  margin-bottom: 14px;
+}
+
+/* =====================================================
+   SEARCH BAR – FORCE CENTER ALIGNMENT
+===================================================== */
+
+/* Center search bar in BOTH states */
+.search-bar {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Keep different widths per state */
+.app-body.empty-mode .search-bar {
+  max-width: 480px;
+}
+
+.app-body.app-mode .search-bar {
+  max-width: 520px; /* or 480px if you prefer */
+}
+
+/* =====================================================
+   FORCE SEARCH BAR CENTERING (APP MODE)
+===================================================== */
+
+/* Wrap-level centering */
+.app-body.app-mode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Allow content below to keep normal width */
+.app-body.app-mode .content {
+  width: 100%;
+  align-self: stretch;
+}
+
+/* Search bar sizing */
+.app-body.app-mode .search-bar {
+  max-width: 520px;   /* or 480px if you prefer */
+  width: 100%;
+}
+
+.daily{
+    height: 56%;
+}
+
+.city-name {
+  display: flex;
+  align-items: center; /* Vertically centers icon with text */
+  gap: 10px;           /* Space between icon and text */
+  font-size: 1.8rem;   /* Adjust based on your design */
+  margin: 0;
+}
+
+.loc-icon {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  /* This filter creates a bright Cyan/Aqua color */
+  filter: invert(65%) sepia(97%) saturate(1835%) hue-rotate(145deg) brightness(105%) contrast(106%);
+  margin-right: 4px; /* Optional: adjust spacing */
+}
